@@ -17,7 +17,6 @@ service Auth {
 message User {
   string user_id = 1; // User ID.
   string email = 2; // Email of the user.
-  string password = 3; // Password of the user.
 }
 
 message IsAdminRequest {

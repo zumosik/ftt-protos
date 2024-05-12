@@ -9,9 +9,6 @@ export class User extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): User;
 
-  getPassword(): string;
-  setPassword(value: string): User;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): User.AsObject;
   static toObject(includeInstance: boolean, msg: User): User.AsObject;
@@ -24,7 +21,6 @@ export namespace User {
   export type AsObject = {
     userId: string,
     email: string,
-    password: string,
   }
 }
 
