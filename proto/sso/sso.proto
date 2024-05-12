@@ -9,6 +9,15 @@ service Auth {
   rpc Register (RegisterRequest) returns (RegisterResponse);
   rpc Login (LoginRequest) returns (LoginResponse);
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+
+  rpc getUser (GetUserRequest) returns (GetUserResponse);
+  rpc getUserByToken (GetUserByTokenRequest) returns (GetUserResponse);
+}
+
+message User {
+  string user_id = 1; // User ID.
+  string email = 2; // Email of the user.
+  string password = 3; // Password of the user.
 }
 
 message IsAdminRequest {
@@ -37,3 +46,14 @@ message LoginResponse {
   string token = 1; // Auth token of the logged in user.
 }
 
+message GetUserRequest { 
+  string user_id = 1; // User ID to get.
+}
+
+message GetUserResponse {
+  User user = 1; // User information.
+}
+
+message GetUserByTokenRequest { // token will be send in metadata
+
+}

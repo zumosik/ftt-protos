@@ -257,5 +257,127 @@ proto.auth.AuthPromiseClient.prototype.isAdmin =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.auth.GetUserRequest,
+ *   !proto.auth.GetUserResponse>}
+ */
+const methodDescriptor_Auth_getUser = new grpc.web.MethodDescriptor(
+  '/auth.Auth/getUser',
+  grpc.web.MethodType.UNARY,
+  proto.auth.GetUserRequest,
+  proto.auth.GetUserResponse,
+  /**
+   * @param {!proto.auth.GetUserRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.auth.GetUserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.auth.GetUserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.auth.GetUserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.auth.GetUserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.auth.AuthClient.prototype.getUser =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/auth.Auth/getUser',
+      request,
+      metadata || {},
+      methodDescriptor_Auth_getUser,
+      callback);
+};
+
+
+/**
+ * @param {!proto.auth.GetUserRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.auth.GetUserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.auth.AuthPromiseClient.prototype.getUser =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/auth.Auth/getUser',
+      request,
+      metadata || {},
+      methodDescriptor_Auth_getUser);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.auth.GetUserByTokenRequest,
+ *   !proto.auth.GetUserResponse>}
+ */
+const methodDescriptor_Auth_getUserByToken = new grpc.web.MethodDescriptor(
+  '/auth.Auth/getUserByToken',
+  grpc.web.MethodType.UNARY,
+  proto.auth.GetUserByTokenRequest,
+  proto.auth.GetUserResponse,
+  /**
+   * @param {!proto.auth.GetUserByTokenRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.auth.GetUserResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.auth.GetUserByTokenRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.auth.GetUserResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.auth.GetUserResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.auth.AuthClient.prototype.getUserByToken =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/auth.Auth/getUserByToken',
+      request,
+      metadata || {},
+      methodDescriptor_Auth_getUserByToken,
+      callback);
+};
+
+
+/**
+ * @param {!proto.auth.GetUserByTokenRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.auth.GetUserResponse>}
+ *     Promise that resolves to the response
+ */
+proto.auth.AuthPromiseClient.prototype.getUserByToken =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/auth.Auth/getUserByToken',
+      request,
+      metadata || {},
+      methodDescriptor_Auth_getUserByToken);
+};
+
+
 module.exports = proto.auth;
 

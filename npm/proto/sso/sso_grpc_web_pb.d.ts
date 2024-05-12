@@ -29,6 +29,20 @@ export class AuthClient {
                response: proto_sso_sso_pb.IsAdminResponse) => void
   ): grpcWeb.ClientReadableStream<proto_sso_sso_pb.IsAdminResponse>;
 
+  getUser(
+    request: proto_sso_sso_pb.GetUserRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_sso_sso_pb.GetUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_sso_sso_pb.GetUserResponse>;
+
+  getUserByToken(
+    request: proto_sso_sso_pb.GetUserByTokenRequest,
+    metadata: grpcWeb.Metadata | undefined,
+    callback: (err: grpcWeb.RpcError,
+               response: proto_sso_sso_pb.GetUserResponse) => void
+  ): grpcWeb.ClientReadableStream<proto_sso_sso_pb.GetUserResponse>;
+
 }
 
 export class AuthPromiseClient {
@@ -50,6 +64,16 @@ export class AuthPromiseClient {
     request: proto_sso_sso_pb.IsAdminRequest,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_sso_sso_pb.IsAdminResponse>;
+
+  getUser(
+    request: proto_sso_sso_pb.GetUserRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_sso_sso_pb.GetUserResponse>;
+
+  getUserByToken(
+    request: proto_sso_sso_pb.GetUserByTokenRequest,
+    metadata?: grpcWeb.Metadata
+  ): Promise<proto_sso_sso_pb.GetUserResponse>;
 
 }
 
