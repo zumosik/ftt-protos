@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
 
 
 export class User extends jspb.Message {
@@ -175,20 +176,6 @@ export class GetUserResponse extends jspb.Message {
 export namespace GetUserResponse {
   export type AsObject = {
     user?: User.AsObject,
-  }
-}
-
-export class GetUserByTokenRequest extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): GetUserByTokenRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: GetUserByTokenRequest): GetUserByTokenRequest.AsObject;
-  static serializeBinaryToWriter(message: GetUserByTokenRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): GetUserByTokenRequest;
-  static deserializeBinaryFromReader(message: GetUserByTokenRequest, reader: jspb.BinaryReader): GetUserByTokenRequest;
-}
-
-export namespace GetUserByTokenRequest {
-  export type AsObject = {
   }
 }
 

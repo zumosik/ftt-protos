@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package chats;
+
+option go_package = "ftt.chats.v1;chats1";
+
+service ChatService {
+    rpc CreateChat(CreateChatRequest) returns (CreateChatResponse) {}
+    rpc GetChat(GetChatRequest) returns (GetChatResponse) {}
+    rpc UpdateChat(UpdateChatRequest) returns (UpdateChatResponse) {}
+    rpc DeleteChat(DeleteChatRequest) returns (DeleteChatResponse) {}
+}
+
+message Chat {
+    string id = 1;
+    string name = 2;
+    string ownerID = 3;
+    repeated string people_in_chatIDs = 4;
+}
+
+message CreateChatRequest {
+    Chat chat = 1;
+}
+
+message CreateChatResponse {
+    Chat chat = 1;
+}
+
+message GetChatRequest {
+    string chat_id = 1;
+}
+
+message GetChatResponse {
+    Chat chat = 1;
+}
+
+message UpdateChatRequest {
+    Chat chat = 1;
+}
+
+message UpdateChatResponse {
+    Chat chat = 1;
+}
+
+message DeleteChatRequest {
+    string chat_id = 1;
+}
+
+message DeleteChatResponse {
+    string message = 1;
+}

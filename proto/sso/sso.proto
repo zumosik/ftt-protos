@@ -1,6 +1,11 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
+
 package auth;
+
+
 
 option go_package = "ftt.sso.v1;ssov1";
 
@@ -11,7 +16,7 @@ service Auth {
   rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
 
   rpc getUser (GetUserRequest) returns (GetUserResponse);
-  rpc getUserByToken (GetUserByTokenRequest) returns (GetUserResponse);
+  rpc getUserByToken (google.protobuf.Empty) returns (GetUserResponse);
 }
 
 message User {
@@ -53,6 +58,3 @@ message GetUserResponse {
   User user = 1; // User information.
 }
 
-message GetUserByTokenRequest { // token will be send in metadata
-
-}

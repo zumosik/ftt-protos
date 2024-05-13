@@ -19,6 +19,8 @@
 const grpc = {};
 grpc.web = require('grpc-web');
 
+
+var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js')
 const proto = {};
 proto.auth = require('./sso_pb.js');
 
@@ -321,16 +323,16 @@ proto.auth.AuthPromiseClient.prototype.getUser =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.auth.GetUserByTokenRequest,
+ *   !proto.google.protobuf.Empty,
  *   !proto.auth.GetUserResponse>}
  */
 const methodDescriptor_Auth_getUserByToken = new grpc.web.MethodDescriptor(
   '/auth.Auth/getUserByToken',
   grpc.web.MethodType.UNARY,
-  proto.auth.GetUserByTokenRequest,
+  google_protobuf_empty_pb.Empty,
   proto.auth.GetUserResponse,
   /**
-   * @param {!proto.auth.GetUserByTokenRequest} request
+   * @param {!proto.google.protobuf.Empty} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -341,7 +343,7 @@ const methodDescriptor_Auth_getUserByToken = new grpc.web.MethodDescriptor(
 
 
 /**
- * @param {!proto.auth.GetUserByTokenRequest} request The
+ * @param {!proto.google.protobuf.Empty} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -362,7 +364,7 @@ proto.auth.AuthClient.prototype.getUserByToken =
 
 
 /**
- * @param {!proto.auth.GetUserByTokenRequest} request The
+ * @param {!proto.google.protobuf.Empty} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata

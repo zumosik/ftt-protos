@@ -1,6 +1,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as proto_sso_sso_pb from '../../proto/sso/sso_pb'; // proto import: "proto/sso/sso.proto"
+import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
 
 
 export class AuthClient {
@@ -37,7 +38,7 @@ export class AuthClient {
   ): grpcWeb.ClientReadableStream<proto_sso_sso_pb.GetUserResponse>;
 
   getUserByToken(
-    request: proto_sso_sso_pb.GetUserByTokenRequest,
+    request: google_protobuf_empty_pb.Empty,
     metadata: grpcWeb.Metadata | undefined,
     callback: (err: grpcWeb.RpcError,
                response: proto_sso_sso_pb.GetUserResponse) => void
@@ -71,7 +72,7 @@ export class AuthPromiseClient {
   ): Promise<proto_sso_sso_pb.GetUserResponse>;
 
   getUserByToken(
-    request: proto_sso_sso_pb.GetUserByTokenRequest,
+    request: google_protobuf_empty_pb.Empty,
     metadata?: grpcWeb.Metadata
   ): Promise<proto_sso_sso_pb.GetUserResponse>;
 
