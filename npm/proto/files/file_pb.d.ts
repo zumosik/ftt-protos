@@ -3,8 +3,8 @@ import * as jspb from 'google-protobuf'
 
 
 export class FileChunk extends jspb.Message {
-  getId(): string;
-  setId(value: string): FileChunk;
+  getId(): number;
+  setId(value: number): FileChunk;
 
   getContent(): Uint8Array | string;
   getContent_asU8(): Uint8Array;
@@ -21,7 +21,7 @@ export class FileChunk extends jspb.Message {
 
 export namespace FileChunk {
   export type AsObject = {
-    id: string,
+    id: number,
     content: Uint8Array | string,
   }
 }
