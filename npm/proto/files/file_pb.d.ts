@@ -3,9 +3,6 @@ import * as jspb from 'google-protobuf'
 
 
 export class FileChunk extends jspb.Message {
-  getId(): number;
-  setId(value: number): FileChunk;
-
   getContent(): Uint8Array | string;
   getContent_asU8(): Uint8Array;
   getContent_asB64(): string;
@@ -21,24 +18,23 @@ export class FileChunk extends jspb.Message {
 
 export namespace FileChunk {
   export type AsObject = {
-    id: number,
     content: Uint8Array | string,
   }
 }
 
-export class FileId extends jspb.Message {
+export class GetFileRequest extends jspb.Message {
   getId(): string;
-  setId(value: string): FileId;
+  setId(value: string): GetFileRequest;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FileId.AsObject;
-  static toObject(includeInstance: boolean, msg: FileId): FileId.AsObject;
-  static serializeBinaryToWriter(message: FileId, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FileId;
-  static deserializeBinaryFromReader(message: FileId, reader: jspb.BinaryReader): FileId;
+  toObject(includeInstance?: boolean): GetFileRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetFileRequest): GetFileRequest.AsObject;
+  static serializeBinaryToWriter(message: GetFileRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetFileRequest;
+  static deserializeBinaryFromReader(message: GetFileRequest, reader: jspb.BinaryReader): GetFileRequest;
 }
 
-export namespace FileId {
+export namespace GetFileRequest {
   export type AsObject = {
     id: string,
   }
@@ -47,9 +43,6 @@ export namespace FileId {
 export class FileUploadResponse extends jspb.Message {
   getId(): string;
   setId(value: string): FileUploadResponse;
-
-  getMessage(): string;
-  setMessage(value: string): FileUploadResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileUploadResponse.AsObject;
@@ -62,7 +55,6 @@ export class FileUploadResponse extends jspb.Message {
 export namespace FileUploadResponse {
   export type AsObject = {
     id: string,
-    message: string,
   }
 }
 

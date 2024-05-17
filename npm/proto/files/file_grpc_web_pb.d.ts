@@ -9,7 +9,7 @@ export class FileServiceClient {
                options?: null | { [index: string]: any; });
 
   getFile(
-    request: proto_files_file_pb.FileId,
+    request: proto_files_file_pb.GetFileRequest,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<proto_files_file_pb.FileChunk>;
 
@@ -21,7 +21,7 @@ export class FileServicePromiseClient {
                options?: null | { [index: string]: any; });
 
   getFile(
-    request: proto_files_file_pb.FileId,
+    request: proto_files_file_pb.GetFileRequest,
     metadata?: grpcWeb.Metadata
   ): grpcWeb.ClientReadableStream<proto_files_file_pb.FileChunk>;
 

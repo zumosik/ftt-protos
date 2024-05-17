@@ -77,16 +77,16 @@ proto.file.FileServicePromiseClient =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.file.FileId,
+ *   !proto.file.GetFileRequest,
  *   !proto.file.FileChunk>}
  */
 const methodDescriptor_FileService_GetFile = new grpc.web.MethodDescriptor(
   '/file.FileService/GetFile',
   grpc.web.MethodType.SERVER_STREAMING,
-  proto.file.FileId,
+  proto.file.GetFileRequest,
   proto.file.FileChunk,
   /**
-   * @param {!proto.file.FileId} request
+   * @param {!proto.file.GetFileRequest} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -97,7 +97,7 @@ const methodDescriptor_FileService_GetFile = new grpc.web.MethodDescriptor(
 
 
 /**
- * @param {!proto.file.FileId} request The request proto
+ * @param {!proto.file.GetFileRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!grpc.web.ClientReadableStream<!proto.file.FileChunk>}
@@ -114,7 +114,7 @@ proto.file.FileServiceClient.prototype.getFile =
 
 
 /**
- * @param {!proto.file.FileId} request The request proto
+ * @param {!proto.file.GetFileRequest} request The request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!grpc.web.ClientReadableStream<!proto.file.FileChunk>}
